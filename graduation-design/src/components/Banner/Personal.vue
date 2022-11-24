@@ -13,15 +13,15 @@ import API from '@/apis/axios';
 import   {useRouter}   from 'vue-router'
 const router=useRouter()
 const imageUrl = ref('')
-// const data= API.get('/code/initload')
-// console.log(data);
-// data.then((res)=>{
-//     imageUrl.value='http://127.0.0.1:8080/'+ res.data.message.avatar
-// })
-
-onMounted(async ()=>{
-  imageUrl.value='http://127.0.0.1:8080/'+ (await data).data.message.avatar
+const data= API.get('/code/initload')
+console.log(data);
+data.then((res)=>{
+    imageUrl.value='http://127.0.0.1:8080/'+ res.data.message.avatar
 })
+
+// onMounted(async ()=>{
+//   imageUrl.value='http://127.0.0.1:8080/'+ (await data).data.message.avatar
+// })
 </script>
 
 <style scoped>
